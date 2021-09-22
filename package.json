@@ -1,0 +1,25 @@
+{
+    "name": "vscode-hytrans",
+    "displayName": "vscode-hytrans",
+    "description": "The Hyper Translation (hytrans) File Format supporting for VSCode.",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.60.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "hytrans",
+            "aliases": ["Hyper Translation", "hytrans"],
+            "extensions": [".hytrans"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "hytrans",
+            "scopeName": "source.hytrans",
+            "path": "./syntaxes/hytrans.tmLanguage.json"
+        }]
+    }
+}
