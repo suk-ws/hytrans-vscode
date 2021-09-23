@@ -1,7 +1,8 @@
 {
     "name": "vscode-hytrans",
-    "displayName": "vscode-hytrans",
+    "displayName": "VSCode HyTrans",
     "description": "The Hyper Translation (hytrans) File Format supporting for VSCode.",
+    "publisher": "suk-ws",
     "version": "0.0.1",
     "engines": {
         "vscode": "^1.60.0"

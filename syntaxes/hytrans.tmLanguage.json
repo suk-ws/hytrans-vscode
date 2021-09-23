@@ -3,29 +3,76 @@
 	"name": "Hyper Translation",
 	"patterns": [
 		{
-			"include": "#keywords"
-		},
-		{
-			"include": "#strings"
+			"include": "#comments"
+		}, {
+			"include": "#header"
+		}, {
+			"include": "#text-block"
+		}, {
+			"include": "#param"
+		}, {
+			"include": "#key"
 		}
 	],
 	"repository": {
-		"keywords": {
+		"comments": {
 			"patterns": [{
-				"name": "keyword.control.hytrans",
-				"match": "\\b(if|while|for|return)\\b"
+				"name": "comment.line",
+				"match": "#.*$"
 			}]
 		},
-		"strings": {
-			"name": "string.quoted.double.hytrans",
-			"begin": "\"",
-			"end": "\"",
-			"patterns": [
-				{
-					"name": "constant.character.escape.hytrans",
-					"match": "\\\\."
+		"header": {
+			"patterns": [{
+				"name": "support.class",
+				"match": "%.*$"
+			}]
+		},
+		"text-block": {
+			"patterns": [{
+				"name": "support.function",
+				"begin": "\\|",
+				"end": "$",
+				"patterns": [
+					{ "include": "#content-vars" },
+					{ "include": "#content" }
+				]
+			},{
+				"name": "support.function.git-rebase",
+				"begin": "\\\\",
+				"end": "$",
+				"patterns": [
+					{ "include": "#content-vars" },
+					{ "include": "#content" }
+				]
+			}]
+		},
+		"content-vars": {
+			"patterns": [{
+				"name": "markup.underline",
+				"match": "\\$\\{.*?\\}"
+			}]
+		},
+		"content": {
+			"patterns": [{
+				"name": "markup.raw",
+				"match": ".*"
+			}]
+		},
+		"param": {
+			"patterns": [{
+				"name": "variable.name",
+				"match": "&.*?(=)?(.*)$",
+				"captures": {
+					"1": { "name": "" },
+					"2": { "name": "variable.parameter" }
 				}
-			]
+			}]
+		},
+		"key": {
+			"patterns": [{
+				"name": "keyword.other",
+				"match": "\\S*"
+			}]
 		}
 	},
 	"scopeName": "source.hytrans"

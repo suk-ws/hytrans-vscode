@@ -1,9 +1,5 @@
 # Change Log
 
-All notable changes to the "vscode-hytrans" extension will be documented in this file.
+## [0.0.1-dev1]
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
-
-## [Unreleased]
-
-- Initial release
+设置了最初最原始的按行上色功能
