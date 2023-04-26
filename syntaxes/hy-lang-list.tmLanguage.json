@@ -1,0 +1,22 @@
+{
+	"name": "Hyper Language List",
+	"scopeName": "source.hylangs",
+	"patterns": [
+		{ "include": "#line-lang-def" }
+	],
+	"repository": {
+		"line-lang-def": {
+			"patterns": [{
+				"name": "hy-lang-list.def",
+				"match": "^([^=\\n]*)(=)([^%\\n]*)(?:(%)(\\w+))?$",
+				"captures": {
+					"1": { "name": "keyword.hy-lang-list.def.lang" },
+					"2": { "name": "punctuation.separator.dictionary.key-value.hy-lang-list.def.separator" },
+					"3": { "name": "string.quoted.hy-lang-list.def.parent" },
+					"4": { "name": "constant.numeric.hy-lang-list.def.separator" },
+					"5": { "name": "constant.numeric.hy-lang-list.def.weight" }
+				}
+			}]
+		}
+	}
+}
