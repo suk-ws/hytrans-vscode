@@ -1,0 +1,32 @@
+{
+	"Version Header": {
+		"prefix": "version",
+		"body": [
+			"%${1:1.0}"
+		]
+	},
+	"Encoding": {
+		"prefix": "encoding",
+		"body": [
+			"&encoding=${1:utf-8}"
+		]
+	},
+	"Indent": {
+		"prefix": "indent",
+		"body": [
+			"&indent=${1|1,0|}"
+		]
+	},
+	"Ignore Non Content": {
+		"prefix": "non-content",
+		"body": [
+			"&non-content=${1|ignore,use|}"
+		]
+	},
+	"vars": {
+		"prefix": "$",
+		"body": [
+			"\\${${1:var}}"
+		]
+	}
+}

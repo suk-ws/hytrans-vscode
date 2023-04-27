@@ -6,7 +6,7 @@
     
     "publisher": "suk-ws",
     "license": "MIT",
-    "version": "0.2.1",
+    "version": "0.3.0",
     
     "keywords": [
         "syntax",
@@ -38,7 +38,7 @@
                 "id": "hy-lang-list",
                 "aliases": ["Hyper Language List", "hy-lang-list", "hylangs"],
                 "extensions": [".hylangs"],
-                "configuration": "./language-configuration-lang-list.json"
+                "configuration": "./lang-list.language-configuration.json"
             }
         ],
         "grammars": [
@@ -51,6 +51,16 @@
                 "language": "hy-lang-list",
                 "scopeName": "source.hylangs",
                 "path": "./syntaxes/hy-lang-list.tmLanguage.json"
+            }
+        ],
+        "snippets": [
+            {
+                "language": "hytrans",
+                "path": "./snippets/hytrans.json"
+            },
+            {
+                "language": "hy-lang-list",
+                "path": "./snippets/hy-lang-list.json"
             }
         ]
         

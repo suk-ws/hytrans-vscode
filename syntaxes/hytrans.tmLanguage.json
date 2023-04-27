@@ -3,6 +3,7 @@
 	"scopeName": "source.hytrans",
 	"patterns": [
 		{ "include": "#line-comments" },
+		{ "include": "#line-empty" },
 		{ "include": "#line-header" },
 		{ "include": "#line-text-content" },
 		{ "include": "#line-header-param" },
@@ -13,6 +14,12 @@
 			"patterns": [{
 				"name": "comment.hytrans",
 				"match": "^#.*$"
+			}]
+		},
+		"line-empty": {
+			"patterns": [{
+				"name": "comment.hytrans.empty",
+				"match": "^[ \t].*$"
 			}]
 		},
 		"line-header": {
@@ -56,12 +63,17 @@
 					}
 				}
 			},{
-				"name": "bold.hytrans.trans-text-line",
-				"begin": "\\\\",
-				"end": "$",
-				"patterns": [
-					{ "include": "#content" }
-				]
+				"name": "bold.hytrans.trans-text-line-non-break",
+				"match": "^(\\\\) ?(.*)$",
+				"captures": {
+					"1": { "name": "meta.property-name.hytrans.trans-text-line-non-break.marker" },
+					"2": {
+						"name": "quote.hytrans.trans-content",
+						"patterns": [
+							{ "include": "#content-vars" }
+						]
+					}
+				}
 			}]
 		},
 		"content": {
